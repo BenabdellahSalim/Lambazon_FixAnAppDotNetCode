@@ -22,10 +22,18 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public string SetCulture(string language)
         {
-            string culture = "";
-            // TODO complete the code 
-            // Default language is "en", french is "fr" and spanish is "es".
-            
+            string culture = "en";
+
+            switch (language.ToLower())
+            {
+                case "french":
+                    culture = "fr";
+                    break;
+
+                case "spanish":
+                    culture = "es";
+                    break;
+            }
             return culture;
         }
 
