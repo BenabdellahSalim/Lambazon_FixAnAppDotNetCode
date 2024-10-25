@@ -1,7 +1,6 @@
-﻿
-namespace P2FixAnAppDotNetCode.Models
+﻿namespace P2FixAnAppDotNetCode.Models.Services
 {
-    public interface ICart
+    public interface ICartService
     {
         void AddItem(Product product, int quantity);
 

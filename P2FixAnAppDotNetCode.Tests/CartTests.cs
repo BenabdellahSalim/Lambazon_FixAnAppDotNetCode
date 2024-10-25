@@ -8,14 +8,14 @@ using Xunit;
 namespace P2FixAnAppDotNetCode.Tests
 {
     /// <summary>
-    /// The Cart test class
+    /// The CartService test class
     /// </summary>
     public class CartTests
     {
         [Fact]
         public void AddItemInCart()
         {
-            Cart cart = new Cart();
+            CartService cart = new CartService();
             Product product1 = new Product(1, 0, 20, "name", "description");
             Product product2 = new Product(1, 0, 20, "name", "description");
 
@@ -30,7 +30,7 @@ namespace P2FixAnAppDotNetCode.Tests
         [Fact]
         public void GetAverageValue()
         {
-            ICart cart = new Cart();
+            ICartService cart = new CartService();
             IProductRepository productRepository = new ProductRepository();
             IOrderRepository orderRepository = new OrderRepository();
             IProductService productService = new ProductService(productRepository, orderRepository);
@@ -47,7 +47,7 @@ namespace P2FixAnAppDotNetCode.Tests
         [Fact]
         public void GetTotalValue()
         {
-            ICart cart = new Cart();
+            ICartService cart = new CartService();
             IProductRepository productRepository = new ProductRepository();
             IOrderRepository orderRepository = new OrderRepository();
             IProductService productService = new ProductService(productRepository, orderRepository);
@@ -65,7 +65,7 @@ namespace P2FixAnAppDotNetCode.Tests
         [Fact]
         public void FindProductInCartLines()
         {
-            Cart cart = new Cart();
+            CartService cart = new CartService();
             Product product = new Product(999, 0, 20, "name", "description");
 
             cart.AddItem(product, 1);

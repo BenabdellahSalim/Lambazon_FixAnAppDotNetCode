@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using P2FixAnAppDotNetCode.Models;
+using P2FixAnAppDotNetCode.Models.Services;
 
 namespace P2FixAnAppDotNetCode.Components
 {
     public class CartSummaryViewComponent : ViewComponent
     {
-        private readonly Cart _cart;
+        private readonly CartService _cart;
 
-        public CartSummaryViewComponent(ICart cart)
+        public CartSummaryViewComponent(ICartService cart)
         {
-            _cart = cart as Cart;
+            _cart = cart as CartService;
         }
 
         public IViewComponentResult Invoke()
