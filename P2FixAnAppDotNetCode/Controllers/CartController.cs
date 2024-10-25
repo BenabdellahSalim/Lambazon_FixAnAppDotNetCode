@@ -7,10 +7,10 @@ namespace P2FixAnAppDotNetCode.Controllers
 {
     public class CartController : Controller
     {
-        private readonly ICart _cart;
+        private readonly ICartService _cart;
         private readonly IProductService _productService;
 
-        public CartController(ICart pCart, IProductService productService)
+        public CartController(ICartService pCart, IProductService productService)
         {
             _cart = pCart;
             _productService = productService;
@@ -18,7 +18,7 @@ namespace P2FixAnAppDotNetCode.Controllers
 
         public ViewResult Index()
         {
-            return View(_cart as Cart);
+            return View(_cart as CartService);
         }
 
         [HttpPost]

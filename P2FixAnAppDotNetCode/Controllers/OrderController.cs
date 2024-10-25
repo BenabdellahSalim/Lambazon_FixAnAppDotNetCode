@@ -8,11 +8,11 @@ namespace P2FixAnAppDotNetCode.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly ICart _cart;
+        private readonly ICartService _cart;
         private readonly IOrderService _orderService;
         private readonly IStringLocalizer<OrderController> _localizer;
 
-        public OrderController(ICart pCart, IOrderService service, IStringLocalizer<OrderController> localizer)
+        public OrderController(ICartService pCart, IOrderService service, IStringLocalizer<OrderController> localizer)
         {
             _cart = pCart;
             _orderService = service;
@@ -24,13 +24,13 @@ namespace P2FixAnAppDotNetCode.Controllers
         [HttpPost]
         public IActionResult Index(Order order)
         {
-            if (!((Cart) _cart).Lines.Any())
+            if (!((CartService) _cart).Lines.Any())
             {
                 ModelState.AddModelError("", _localizer["CartEmpty"]);
             }
             if (ModelState.IsValid)
             {
-                order.Lines = (_cart as Cart)?.Lines.ToArray();
+                order.Lines = (_cart as CartService)?.Lines.ToArray();
                 _orderService.SaveOrder(order);
                 return RedirectToAction(nameof(Completed));
             }

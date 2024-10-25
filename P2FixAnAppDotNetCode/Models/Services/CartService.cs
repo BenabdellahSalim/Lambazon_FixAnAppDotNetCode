@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace P2FixAnAppDotNetCode.Models
+namespace P2FixAnAppDotNetCode.Models.Services
 {
     /// <summary>
-    /// The Cart class
+    /// The CartService class
     /// </summary>
-    public class Cart : ICart
+    public class CartService : ICartService
     {
         /// <summary>
         /// Read-only property for display only
@@ -81,10 +81,5 @@ namespace P2FixAnAppDotNetCode.Models
         }
     }
 
-    public class CartLine
-    {
-        public int OrderLineId { get; set; }
-        public Product Product { get; set; }
-        public int Quantity { get; set; }
-    }
+
 }

@@ -4,6 +4,6 @@
     {
         Product[] GetAllProducts();
         Product GetProductById(int id);
-        void UpdateProductQuantities(Cart cart);
+        void UpdateProductQuantities(CartService cart);
     }
 }

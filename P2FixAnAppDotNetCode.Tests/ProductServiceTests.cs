@@ -30,7 +30,7 @@ namespace P2FixAnAppDotNetCode.Tests
         [Fact]
         public void UpdateProductQuantities()
         {
-            Cart cart = new Cart();
+            CartService cart = new CartService();
             IProductRepository productRepository = new ProductRepository();
             IOrderRepository orderRepository = new OrderRepository();
             IProductService productService = new ProductService(productRepository, orderRepository);
@@ -49,7 +49,7 @@ namespace P2FixAnAppDotNetCode.Tests
             //do a second run adding items to cart. Resetting the repo and service and cart
             //will simulate the process from the front end perspective
             //here testing that product stock values are decreasing for each cart checkout, not just a single time
-            cart = new Cart();
+            cart = new CartService();
             productRepository = new ProductRepository();
             productService = new ProductService(productRepository, orderRepository);
             products = productService.GetAllProducts();

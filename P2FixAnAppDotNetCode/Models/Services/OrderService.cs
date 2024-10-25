@@ -8,11 +8,11 @@ namespace P2FixAnAppDotNetCode.Models.Services
     /// </summary>
     public class OrderService : IOrderService
     {
-       private readonly ICart _cart;
+       private readonly ICartService _cart;
        private readonly IOrderRepository _repository;
        private readonly IProductService _productService;
 
-        public OrderService(ICart cart, IOrderRepository orderRepo, IProductService productService)
+        public OrderService(ICartService cart, IOrderRepository orderRepo, IProductService productService)
         {
             _repository = orderRepo;
             _cart = cart;
@@ -34,7 +34,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         private void UpdateInventory()
         {
-            _productService.UpdateProductQuantities(_cart as Cart);
+            _productService.UpdateProductQuantities(_cart as CartService);
             _cart.Clear();
         }
     }
