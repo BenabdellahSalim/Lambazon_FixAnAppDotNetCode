@@ -1,16 +1,17 @@
 ﻿using System;
-using P2FixAnAppDotNetCode.Models.Repositories;
+using P2FixAnAppDotNetCode.Infrastructure.Repositories;
+using P2FixAnAppDotNetCode.Models;
 
-namespace P2FixAnAppDotNetCode.Models.Services
+namespace P2FixAnAppDotNetCode.Application.Services
 {
     /// <summary>
     /// Provides services to manage an order
     /// </summary>
     public class OrderService : IOrderService
     {
-       private readonly ICartService _cart;
-       private readonly IOrderRepository _repository;
-       private readonly IProductService _productService;
+        private readonly ICartService _cart;
+        private readonly IOrderRepository _repository;
+        private readonly IProductService _productService;
 
         public OrderService(ICartService cart, IOrderRepository orderRepo, IProductService productService)
         {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using P2FixAnAppDotNetCode.Models.Services;
+using P2FixAnAppDotNetCode.Application.Services;
 
 namespace P2FixAnAppDotNetCode.Components
 {

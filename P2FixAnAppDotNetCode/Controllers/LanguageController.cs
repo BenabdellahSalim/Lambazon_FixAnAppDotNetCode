@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using P2FixAnAppDotNetCode.Models.Services;
+using P2FixAnAppDotNetCode.Application.Services;
 using P2FixAnAppDotNetCode.Models.ViewModels;
 
 namespace P2FixAnAppDotNetCode.Controllers

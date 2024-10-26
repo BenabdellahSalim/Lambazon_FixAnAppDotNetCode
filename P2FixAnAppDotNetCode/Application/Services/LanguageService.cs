@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 
-namespace P2FixAnAppDotNetCode.Models.Services
+namespace P2FixAnAppDotNetCode.Application.Services
 {
     /// <summary>
     /// Provides services method to manage the application language

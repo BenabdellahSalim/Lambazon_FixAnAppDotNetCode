@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using P2FixAnAppDotNetCode.Models;
-using P2FixAnAppDotNetCode.Models.Repositories;
-using P2FixAnAppDotNetCode.Models.Services;
+using P2FixAnAppDotNetCode.Repositories;
+using P2FixAnAppDotNetCode.Services;
 using Xunit;
+using P2FixAnAppDotNetCode.Application.Services;
+using P2FixAnAppDotNetCode.Infrastructure.Repositories;
 
 namespace P2FixAnAppDotNetCode.Tests
 {

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using P2FixAnAppDotNetCode.Models;
 
-namespace P2FixAnAppDotNetCode.Models.Services
+namespace P2FixAnAppDotNetCode.Application.Services
 {
     /// <summary>
     /// The CartService class
@@ -15,23 +16,21 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Read-only property for display only
         /// </summary>
-        public IEnumerable<CartLine> Lines => GetCartLineList();
+        public IEnumerable<CartLine> Lines => 
+            GetCartLineList();
 
         /// <summary>
         /// Return the actual cartline list
         /// </summary>
         /// <returns></returns>
-        private List<CartLine> GetCartLineList()
-        {
-            return _cartLines;
-        }
+        private List<CartLine> GetCartLineList() => 
+            _cartLines;
 
         /// <summary>
         /// Adds a product in the cart or increment its quantity in the cart if already added
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            // TODO implement the method
             List<CartLine> cartLines = GetCartLineList();
             CartLine line = cartLines
                 .Where(p => p.Product.Id == product.Id)
@@ -60,19 +59,14 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Get total value of a cart
         /// </summary>
-        public double GetTotalValue()
-        {
-            // TODO implement the method
-            return GetCartLineList()
+        public double GetTotalValue() =>  GetCartLineList()
                     .Sum(l => l.Product.Price * l.Quantity);
-        }
 
         /// <summary>
         /// Get average value of a cart
         /// </summary>
         public double GetAverageValue()
         {
-            // TODO implement the method
             List<CartLine> cartLines = GetCartLineList();
             if (cartLines.Count == 0) return 0.0;
 
@@ -85,30 +79,20 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Looks after a given product in the cart and returns if it finds it
         /// </summary>
-        public Product FindProductInCartLines(int productId)
-        {
-            // TODO implement the method
-            CartLine line = GetCartLineList()
-                    .FirstOrDefault(l => l.Product.Id == productId);
-            return line?.Product;
-        }
+        public Product FindProductInCartLines(int productId) =>
+            GetCartLineList()
+                    .FirstOrDefault(l => l.Product.Id == productId)?.Product;
 
         /// <summary>
         /// Get a specific cartline by its index
         /// </summary>
-        public CartLine GetCartLineByIndex(int index)
-        {
-            return Lines.ToArray()[index];
-        }
+        public CartLine GetCartLineByIndex(int index) =>
+            Lines.ToArray()[index];
 
         /// <summary>
         /// Clears a the cart of all added products
         /// </summary>
-        public void Clear()
-        {
-            List<CartLine> cartLines = GetCartLineList();
-            cartLines.Clear();
-        }
+        public void Clear() => GetCartLineList().Clear();
     }
 
 

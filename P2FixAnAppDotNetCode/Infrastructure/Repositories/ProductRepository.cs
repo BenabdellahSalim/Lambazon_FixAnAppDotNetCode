@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using P2FixAnAppDotNetCode.Models;
 
-namespace P2FixAnAppDotNetCode.Models.Repositories
+namespace P2FixAnAppDotNetCode.Infrastructure.Repositories
 {
     /// <summary>
     /// The class that manages product data

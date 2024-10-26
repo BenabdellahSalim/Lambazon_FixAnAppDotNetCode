@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using P2FixAnAppDotNetCode.Models;
 
-namespace P2FixAnAppDotNetCode.Models.Services
+namespace P2FixAnAppDotNetCode.Application.Services
 {
     public interface IProductService
     {

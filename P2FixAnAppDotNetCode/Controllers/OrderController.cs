@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using P2FixAnAppDotNetCode.Application.Services;
 using P2FixAnAppDotNetCode.Models;
-using P2FixAnAppDotNetCode.Models.Services;
 
 namespace P2FixAnAppDotNetCode.Controllers
 {

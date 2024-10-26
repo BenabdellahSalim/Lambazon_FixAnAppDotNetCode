@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace P2FixAnAppDotNetCode.Models.Services
+namespace P2FixAnAppDotNetCode.Application.Services
 {
     public interface ILanguageService
     {
