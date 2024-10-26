@@ -1,5 +1,4 @@
 using P2FixAnAppDotNetCode.Application.Services;
-using P2FixAnAppDotNetCode.Services;
 using Xunit;
 
 namespace P2FixAnAppDotNetCode.Tests
