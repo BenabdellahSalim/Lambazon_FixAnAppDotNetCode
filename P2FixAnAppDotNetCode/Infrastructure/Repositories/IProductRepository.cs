@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using P2FixAnAppDotNetCode.Models;
 
-namespace P2FixAnAppDotNetCode.Models.Repositories
+namespace P2FixAnAppDotNetCode.Infrastructure.Repositories
 {
     public interface IProductRepository
     {

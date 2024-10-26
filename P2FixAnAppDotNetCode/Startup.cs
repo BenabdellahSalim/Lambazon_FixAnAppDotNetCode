@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using P2FixAnAppDotNetCode.Models.Repositories;
-using P2FixAnAppDotNetCode.Models.Services;
+using P2FixAnAppDotNetCode.Application.Services;
+using P2FixAnAppDotNetCode.Infrastructure.Repositories;
 
 namespace P2FixAnAppDotNetCode
 {

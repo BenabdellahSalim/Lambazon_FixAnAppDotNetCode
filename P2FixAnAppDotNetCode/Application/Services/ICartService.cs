@@ -1,4 +1,6 @@
-﻿namespace P2FixAnAppDotNetCode.Models.Services
+﻿using P2FixAnAppDotNetCode.Models;
+
+namespace P2FixAnAppDotNetCode.Application.Services
 {
     public interface ICartService
     {

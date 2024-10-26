@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using P2FixAnAppDotNetCode.Application.Services;
 using P2FixAnAppDotNetCode.Models;
-using P2FixAnAppDotNetCode.Models.Services;
 using System.Collections.Generic;
 
 namespace P2FixAnAppDotNetCode.Controllers
