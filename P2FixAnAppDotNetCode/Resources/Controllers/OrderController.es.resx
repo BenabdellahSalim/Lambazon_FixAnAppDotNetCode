@@ -120,4 +120,10 @@
   <data name="CartEmpty" xml:space="preserve">
     <value>Lo sentimos, su cesta está vacía.</value>
   </data>
+  <data name="ErrorMissingZip" xml:space="preserve">
+    <value>Introduzca un Código postal</value>
+  </data>
+  <data name="ErrorMissingZip1" xml:space="preserve">
+    <value>Introduzca un Código postal</value>
+  </data>
 </root>
