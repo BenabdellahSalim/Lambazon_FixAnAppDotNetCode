@@ -53,8 +53,23 @@ namespace P2FixAnAppDotNetCode.Application.Services
         /// <summary>
         /// Removes a product form the cart
         /// </summary>
-        public void RemoveLine(Product product) =>
-            GetCartLineList().RemoveAll(l => l.Product.Id == product.Id);
+        public void RemoveLine(Product product) 
+           {
+            var line = GetCartLineList().FirstOrDefault(l => l.Product.Id == product.Id);
+
+            if (line != null)
+            {
+                if (line.Quantity > 1)
+                {
+                    line.Quantity--;
+                }
+                else
+                {
+                    GetCartLineList().Remove(line); 
+                }
+            }
+        }
+        
 
         /// <summary>
         /// Get total value of a cart
