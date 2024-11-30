@@ -1,40 +1,60 @@
-# DotNetprojet2
-Spécifications fonctionnelles de l’application Lambazon L’application doit avoir les fonctionnalités suivantes. 
-Ces informations sont un guide pour les tests et la documentation. 
+# **Lambazon - Gestion des Produits et des Stocks**
 
-  1. La page d’accueil doit permettre à l’utilisateur d’ajouter les articles dans son panier. 
+## **Description du projet**
 
-  2. La page de présentation des produits doit afficher le nom, la description, le prix du produit et le nombre d’articles en stock. 
+Lambazon est une application web conçue pour la gestion des stocks et des commandes. Elle permet aux utilisateurs de parcourir un catalogue de produits, de gérer leur panier, et d'effectuer des commandes tout en offrant une interface interne pour la gestion des stocks. Cette application est multi-langues, avec un support pour le français, l'anglais, et l'espagnol.
 
-  3. Lorsque l’utilisateur clique sur « Ajouter au panier » : 
-       1. Le produit est ajouté au panier avec une quantité de 1.
-       2. L’utilisateur est ensuite redirigé vers la page de présentation du panier. 
-       3. La page de présentation du panier affiche la quantité, le nom de l’article, le prix 
-           unitaire et le prix total (quantité * prix de l’article). 
-       4. Elle affiche également le total général des articles du panier. 
-       5. Elle affiche le prix moyen des articles du panier. 
+## **Spécifications fonctionnelles**
+
+### **Fonctionnalités principales**
+1. **Page d’accueil :**
+   - Ajouter des articles au panier.
+
+2. **Page de présentation des produits :**
+   - Afficher le nom, la description, le prix et le nombre d’articles en stock.
+   - Ajouter un produit au panier avec une quantité initiale de 1.
+   - Rediriger l’utilisateur vers la page de présentation du panier.
+
+3. **Page de présentation du panier :**
+   - Afficher la quantité, le nom, le prix unitaire et le prix total des articles.
+   - Calculer le total général et le prix moyen des articles.
+   - Inclure des boutons :
+     - **Poursuivre les achats** : Retour à la page des produits.
+     - **Commander** : Rediriger vers la page de paiement.
+
+4. **Page de paiement :**
+   - Champs obligatoires : nom, adresse, ville, code postal, et pays.
+   - Validation des champs et messages d’erreur en cas d’omission.
+   - Mise à jour du stock après commande.
+
+5. **Gestion des langues :**
+   - Sélection entre Anglais, Français et Espagnol.
+   - Traduction dynamique des pages, des messages d’erreur, et des boutons.
+
+### **Fonctionnalités internes ajoutées**
+- Interface interne pour **créer** et **valider des produits** avant leur enregistrement dans le système.
+- Suivi et mise à jour des stocks via une interface intuitive pour les équipes internes.
+
+---
+
+## **Ajouts récents**
+
+- **Validation des produits** : Une étape a été ajoutée pour approuver les nouveaux produits avant leur enregistrement.
+- **Tests unitaires et d’intégration** : 
+  - Tests unitaires pour valider la logique métier.
+  - Tests d’intégration pour garantir une bonne interaction entre les composants de l’application.
+  - Base de données In-Memory utilisée pour les tests.
+
+---
+
+## **Technologies utilisées**
+
+- **ASP.NET Core** pour le développement backend.
+- **Entity Framework Core** pour la gestion des données.
+- **In-Memory Database** pour les tests.
+- **XUnit** pour les tests unitaires et d’intégration.
+- **IStringLocalizer** pour la gestion des langues.
+
+---
 
 
-  4. Elle dispose d’un bouton, « Poursuivre les achats », qui redirige l’utilisateur vers la page de présentation des produits. 
-
-  5. Elle dispose d’un bouton « Commander », qui redirige l’utilisateur vers la page de paiement. 
-
-  6. Si l’utilisateur clique sur un produit qui est déjà dans son panier, ce dernier doit incrémenter la quantité de 1 et mettre à jour les totaux. 
-
-  7. Pour toutes les pages, le menu déroulant de la langue est visible dans le pied de page. 
-        1. L’utilisateur peut sélectionner Anglais, Français ou Espagnol. 
-        2. Lorsque l’utilisateur clique sur « OK », le site passe à la langue choisie pour les éléments suivants : 
-              1. Les intitulés de la page de présentation des produits. 
-              2. Les intitulés de la page de présentation du panier. 
-              3. Les intitulés de la page de paiement. 
-              4. Tous les messages d’erreur. 
-              5. Tous les intitulés des boutons. 
-              6. Les options du menu déroulant de la langue. 
-
-  8. La page de paiement. 
-      1. Tous les champs doivent être remplis par l’utilisateur : nom, adresse, ville, code postal et pays.
-      2. Afficher un message d’erreur si l’utilisateur ne remplit pas un champ obligatoire lorsqu’il clique sur « Terminer la commande ». 
-      3. Une fois que l’utilisateur a terminé sa commande avec succès, voici les opérations à effectuer :
-               1. La quantité de l’inventaire du produit (stock) diminue proportionnellement à la quantité indiquée dans la commande. 
-               2. L’utilisateur est redirigé vers la page de présentation des produits.
-               3. Mettre à jour la quantité en stock.
